@@ -1,3 +1,5 @@
+import { colors } from '../util/Colors';
+
 export class Conta {
 
     private _numero: number;
@@ -82,7 +84,8 @@ export class Conta {
                 break;
         }
 
-        console.log("\n\n*****************************************************");
+        console.log(colors.fg.bluestrong +
+            "\n\n*****************************************************");
         console.log("Dados da Conta:");
         console.log("*****************************************************");
         console.log("Numero da Conta: " + this._numero);

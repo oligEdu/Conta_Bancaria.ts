@@ -1,6 +1,8 @@
 import readlinesync = require('readline-sync');
-import {colors} from './src/util/Colors';
+import { colors } from './src/util/Colors';
 import { Conta } from './src/model/Conta';
+import { ContaCorrente } from './src/model/ContaCorrente'
+import { ContaPoupanca } from './src/model/ContaPoupanca';
 
 export function main() {
     
@@ -12,6 +14,20 @@ export function main() {
     conta.visualizar();
     conta.depositar(5000);
     conta.visualizar();
+
+    const contacorrente: ContaCorrente = new ContaCorrente(2, 123, 1, "Mariana", 15000, 1000);
+    contacorrente.visualizar();
+    contacorrente.sacar(2000);
+    contacorrente.visualizar();
+    contacorrente.depositar(1000);
+    contacorrente.visualizar();
+
+    const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, "Victor", 1000, 10);
+    contapoupanca.visualizar();
+    contapoupanca.sacar(200);
+    contapoupanca.visualizar();
+    contapoupanca.depositar(1000);
+    contapoupanca.visualizar();
     console.log("                                                     ");
 
     while (true){
@@ -117,18 +133,18 @@ export function main() {
     }
 }
 
-function keyPress (): void {
-    console.log(colors.reset, "");
-    console.log("\nPressione enter para continuar...");
-    readlinesync.prompt();
-}
-
 export function sobre(): void {
     console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: Eduardo Garcia.");
     console.log("Generation Brasil - eduardoj@generation.org");
     console.log("github.com/oligEdu/Conta_Bancaria.ts");
     console.log("*****************************************************");
+}
+
+function keyPress (): void {
+    console.log(colors.reset, "");
+    console.log("\nPressione enter para continuar...");
+    readlinesync.prompt();
 }
 
 main();
