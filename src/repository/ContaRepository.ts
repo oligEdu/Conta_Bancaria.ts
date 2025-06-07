@@ -4,7 +4,7 @@ export interface ContaRepository {
 
     //CRUD
     procurarPorNumero(numero: number): void;
-    listasTodas(): void;
+    listarTodas(): void;
     cadastrar(conta: Conta): void;
     atualizar(conta: Conta): void;
     deletar(numero: number): void;
